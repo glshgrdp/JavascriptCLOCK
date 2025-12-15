@@ -1,0 +1,192 @@
+ html, body {
+    height: 100%; 
+    width: 100%;
+    margin: 0; 
+    padding: 0;
+}
+
+/* 1. BODY: SADECE BAŞLANGIÇ ZEMİNİNİ VE İMLECİ AYARIM */
+body {
+    background-color: #1a1a1a; 
+    height: 100%; 
+    position: relative; 
+}
+/*ANASAYFADAKİ WALLPAPER ALANIM  */
+#anaIcerik {
+    background-image: url('ny.jpg'); 
+    background-size: cover; 
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    
+    width: 100vw; 
+    height: 100vh;
+    
+    /* Logo için absolute pozisyon kullandığımdan ebeveyn relative olmalı */
+    position: relative; 
+    top: 0; 
+    left: 0;
+    
+    padding-bottom: 50px;
+}
+
+/* Ana içeriği gizlediğim kural */
+.main-content {
+    display: none; 
+}
+
+/* Müzik Oynatıcıyı Gizleme Kodum */
+#arkaPlanMuzik {
+    display: none;
+}
+
+/* --- İsim Sorma Kutucuğum */
+.input-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); 
+    display: none; 
+    justify-content: center;
+    align-items: center; 
+    z-index: 1000;
+}
+
+/* ✨ Neon Titreşim Animasyonu */
+@keyframes neonGlow {
+    0%, 100% {
+        box-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+    }
+    50% {
+        box-shadow: 0 0 10px #ff0077, 0 0 20px #ff0077, 0 0 30px #ff0077;
+    }
+}
+
+/* Açılış ve Büyüme Animasyonu */
+@keyframes fadeInScale {
+    0% {
+        opacity: 0; 
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1; 
+        transform: scale(1);
+    }
+}
+
+.modal-content {
+    background-color: white;
+    color: #333;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); 
+    max-width: 400px; 
+    width: 90%;
+    
+    animation: fadeInScale 0.5s ease-out forwards, 
+               neonGlow 1.5s infinite alternate; 
+}
+
+
+
+/* KODLUYORUZ GORSELI LOGO GÖRSELİ KONUMUM : En Üstte ve Ortada Sınırda */
+.logo-img { 
+    width: 17%;
+    position: absolute; 
+    top: 0; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    z-index: 50; 
+    margin-top: 0;
+}
+
+/* 1. SATIR: KARŞILAMA METNİM  (.text1) */
+.text1 {
+    position: relative;
+    text-align: center;
+    color: white; 
+    
+    font-size: 50px; 
+    
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    letter-spacing: 7px;
+    
+    /* Logoya sayfa üst ortada yer açmak için büyük marjin */
+    margin-top: 150px; 
+    
+    /* display: inline-block; korundu, çünkü bu metin ortada kalmalı. */
+    display: inline-block; 
+    
+    /* SİYAH PARLAK ARKA FON AYARIM */
+    background-color: rgba(0, 0, 0, 0.8); 
+    padding: 10px 20px; 
+    border-radius: 8px;
+    text-shadow: 0 0 5px #00FFFF,   
+                 0 0 15px #00FFFF, 
+                 0 0 25px #FFFFFF;  
+}
+
+/* 2. SATIR: SAAT (.clock) */
+.clock {
+    position: relative;
+    text-align: center;
+    color: #FFFF00; 
+    font-size: 60px; 
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    letter-spacing: 7px;
+    
+    /* text1'den sonraki boşluk, yeni satırda başlattım */
+    margin-top: 30px; 
+    
+    /* display: inline-block; korundu, metnin ortalanmasını sağlar. */
+    display: inline-block; 
+    
+    /* SİYAH PARLAK ARKA FON */
+    background-color: rgba(0, 0, 0, 0.8); 
+    padding: 10px 20px; 
+    border-radius: 8px;
+    text-shadow: 0 0 5px #00FFFF,   
+                 0 0 15px #00FFFF, 
+                 0 0 25px #FFFFFF;  
+}
+
+/* 3. SATIR: ALT METİN (.text2) - Saatin hemen altında başlattım */
+.text2 {
+    font-size: 30px;
+    margin-right: 100px;
+    margin-left: 100px;
+    
+    position: relative;
+    text-align: center;
+    color: white; 
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    letter-spacing: 7px;
+
+    /* Saatten sonraki bıraktığım boşluk */
+    margin-top: 10px; 
+    
+    /* display: inline-block; korundu. */
+    background-color: rgba(0, 0, 0, 0.8); 
+    display: inline-block; 
+    padding: 10px 20px; 
+    border-radius: 8px;
+    text-shadow: 0 0 5px #00FFFF,   
+                 0 0 15px #00FFFF, 
+                 0 0 25px #FFFFFF;  
+}
+
+#isimFormu input, #isimFormu button {
+    padding: 8px;
+    margin-top: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+#isimFormu button {
+    background-color: #e98208;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}

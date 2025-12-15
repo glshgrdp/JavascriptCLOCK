@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+        crossorigin="anonymous"
+    />
+     
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    
+    <link rel="stylesheet" href="style.css" /> 
+</head>
+<body>
+
+    <div id="anaIcerik" class="main-content text-center">
+        <img
+            src="https://cdn.sanity.io/images/9kdepi1d/production/65c832d202a503b15d99e628f4313782f3ef50db-300x62.png"
+            alt="Kodluyoruz Logo"
+            class="rounded logo-img"
+        />
+        
+        <div class="text1 text-center">
+            Merhaba, <strong><span id="myName"></span></strong>! Hoş geldin!
+        </div>
+        
+        <div id="myClock" class="clock"></div> 
+        
+        <div class="text2 text-center">
+            
+            <strong>tarihinde Kodluyoruz Frontend Web Development Patikası</strong>'nın
+            Javascript bölümü 1. Ödevindesiniz.
+        </div>
+
+        <audio id="arkaPlanMuzik" loop preload="auto">
+            <source src="jb.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <div id="isimSormaKutusu" class="input-modal">
+        <div id="modalIcerik" class="modal-content">
+            <h3>Lütfen Adınızı Giriniz:</h3>
+            <form id="isimFormu">
+                <input type="text" id="kullaniciAdiInput" placeholder="Adınız" required>
+                <button type="submit">Gönder</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="clock.js"></script>
+</body>
+</html>
